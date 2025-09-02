@@ -1,0 +1,16 @@
+D:\Coding\ConsoleGames\Pacman\bin\Debug\net9.0\Pacman.exe
+D:\Coding\ConsoleGames\Pacman\bin\Debug\net9.0\Pacman.deps.json
+D:\Coding\ConsoleGames\Pacman\bin\Debug\net9.0\Pacman.runtimeconfig.json
+D:\Coding\ConsoleGames\Pacman\bin\Debug\net9.0\Pacman.dll
+D:\Coding\ConsoleGames\Pacman\bin\Debug\net9.0\Pacman.pdb
+D:\Coding\ConsoleGames\Pacman\obj\Debug\net9.0\Pacman.GeneratedMSBuildEditorConfig.editorconfig
+D:\Coding\ConsoleGames\Pacman\obj\Debug\net9.0\Pacman.AssemblyInfoInputs.cache
+D:\Coding\ConsoleGames\Pacman\obj\Debug\net9.0\Pacman.AssemblyInfo.cs
+D:\Coding\ConsoleGames\Pacman\obj\Debug\net9.0\Pacman.csproj.CoreCompileInputs.cache
+D:\Coding\ConsoleGames\Pacman\obj\Debug\net9.0\Pacman.sourcelink.json
+D:\Coding\ConsoleGames\Pacman\obj\Debug\net9.0\Pacman.dll
+D:\Coding\ConsoleGames\Pacman\obj\Debug\net9.0\refint\Pacman.dll
+D:\Coding\ConsoleGames\Pacman\obj\Debug\net9.0\Pacman.pdb
+D:\Coding\ConsoleGames\Pacman\obj\Debug\net9.0\Pacman.genruntimeconfig.cache
+D:\Coding\ConsoleGames\Pacman\obj\Debug\net9.0\ref\Pacman.dll
+D:\Coding\ConsoleGames\Pacman\bin\Debug\net9.0\map.txt
