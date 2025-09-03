@@ -2,8 +2,15 @@
 {
     static void Main()
     {
+        Console.CursorVisible = false;
+        
         char[,] map = ReadMap("map.txt");
+        ConsoleKeyInfo pressedKey = new ConsoleKeyInfo('w', ConsoleKey.W, false, false, false);
 
+        int pacmanX = 1;
+        int pacmanY = 1;
+        int score = 0;
+        
         while (true)
         {
             Console.Clear();
@@ -12,10 +19,16 @@
             DrawMap(map);
             
             Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.SetCursorPosition(1, 1);
+            Console.SetCursorPosition(pacmanX, pacmanY);
             Console.Write("@");
-
-            Thread.Sleep(1000);
+            
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.SetCursorPosition(28,0);
+            Console.Write($"Score: {score}");
+            
+            pressedKey = Console.ReadKey();
+            
+            HandleInput(pressedKey, ref pacmanX, ref pacmanY, map, ref score);
         }
     }
 
@@ -30,6 +43,43 @@
         return map;
     }
 
+    private static void HandleInput(ConsoleKeyInfo pressedKey, ref int pacmanX, ref int pacmanY, char[,]map, ref int score)
+    {
+        int[] direction = GetDirection(pressedKey);
+        int nextPacmanPositionX = pacmanX+direction[0];
+        int nextPacmanPositionY = pacmanY+direction[1];
+
+        char nextCell = map[nextPacmanPositionX, nextPacmanPositionY];
+        
+        if (nextCell == ' ' || nextCell == '.')
+        {
+            pacmanX = nextPacmanPositionX;
+            pacmanY = nextPacmanPositionY;
+
+            if (nextCell == '.')
+            {
+                score++;
+                map[nextPacmanPositionX, nextPacmanPositionY] = ' ';
+            }
+        }
+    }
+
+    private static int[] GetDirection(ConsoleKeyInfo pressedKey)
+    {
+        int[] direction = { 0, 0 };
+        
+        if (pressedKey.Key == ConsoleKey.UpArrow)
+            direction[1] = -1;
+        else if (pressedKey.Key == ConsoleKey.DownArrow)
+            direction[1] = 1;       
+        else if (pressedKey.Key == ConsoleKey.LeftArrow)
+            direction[0] = -1;      
+        else if (pressedKey.Key == ConsoleKey.RightArrow)
+            direction[0] = 1;
+        
+        return direction;
+    }
+    
     private static void DrawMap(char[,] map)
     {
         for (int y = 0; y < map.GetLength(1); y++)
