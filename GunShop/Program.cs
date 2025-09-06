@@ -4,25 +4,44 @@ class Program
 {
     public static void Main()
     {
-        // Console.WriteLine(name + " - " + "$" + price);
+        Gun[] guns =
+        {
+            new Gun("AK47", 2600),
+            new Gun("AK48", 2700),
+            new Gun("AK49", 2800),
+            new Gun("AK410", 2900),
+        };
+       
+        for (int i = 0; i < guns.Length ; i++)
+        {
+            guns[i].ShowGuns();
+        }
+
+        Console.Write("Выберите оружие: ");
+        int desiredGun = int.Parse(Console.ReadLine())-1;
     }
-}
-class Guns
-{
-    Gun ak47 = new Gun("AK47", 2600);
-    Gun ak48 = new Gun("AK47", 2600);
-    Gun ak49 = new Gun("AK47", 2600);
-    Gun ak410 = new Gun("AK47", 2600);
 }
 class Gun
 {
-    public string name;
-    public int price;
+    public string Name;
+    public int Price;
 
     public Gun(string name, int price)
     {
-        this.name = name;
-        this.price = price;
+       Name = name;
+       Price = price;
     }
+    //
+    // public List<Gun> guns = new List<Gun>()
+    // {
+    //     new Gun("AK47", 2600),
+    //     new Gun("AK48", 2700),
+    //     new Gun("AK49", 2800),
+    //     new Gun("AK410", 2900),
+    // };
 
+    public void ShowGuns()
+    {
+        Console.WriteLine(Name + " - " + "$" + Price);
+    }
 } 
